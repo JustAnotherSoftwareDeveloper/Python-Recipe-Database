@@ -1,11 +1,9 @@
 from flask import Flask
-from flask_mongoengine import MongoEngine
+from flask.ext.mongoalchemy import MongoAlchemy
 app = Flask(__name__)
-db=MongoEngine()
-app.config["MONGODB_SETTINGS"] = {
-    'db':'recipe-mongo',
-    'host':'172.17.0.2',
-    'port': 27017
+app.config["DEBUG"] = True
+app.config['MONGOALCHEMY_DATABASE'] = "recipes"
+app.config["MONGOALCHEMY_SERVER"] = "172.17.0.2"
+db = MongoAlchemy(app)
 
-}
 from app import routes
