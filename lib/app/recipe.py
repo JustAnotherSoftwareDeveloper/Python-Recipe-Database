@@ -11,6 +11,11 @@ class Recipe(db.Document):
     tags=db.ListField(db.StringField())
 
     def toJson(self):
-        json.dumps(self.__dict__)
+        json={}
+        json['title']=self.title
+        json['filename']=self.filename
+        json['ingredients']=self.ingredients
+        json['tags']=self.tags
+        return json
 
 
