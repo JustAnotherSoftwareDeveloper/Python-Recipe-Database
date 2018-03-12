@@ -3,6 +3,7 @@ import datetime
 
 from flask.json import jsonify
 from flask import request
+from app.FileDelegate import FileDelegate
 
 
 @app.route('/', methods=['GET'])
@@ -18,7 +19,7 @@ def searchByTags():
 
 
 @app.route('/search/byTags/all', methods=['GET'])
-def searchByTags():
+def searchByTagsAll():
     return jsonify("{}")
 
 
@@ -33,19 +34,31 @@ def searchByIngredients():
 
 
 @app.route("/search/ByIngredients/all", methods=['GET'])
-def searchByIngredients():
+def searchByIngredientsAll():
     return jsonify("{}")
 
 
-@app.route("/recipes/put", methods=['PUT'])
+@app.route("/recipes/put", methods=['POST'])
 def addRecipe():
-    return jsonify("{}")
+    delegate=FileDelegate()
+    new_file=request.files['file']
+    if new_file:
+        json=delegate.addNew(file=request.files['file'],properties=request.args)
+        return jsonify(json)
+    return jsonify("{'error':'no file found'}")
 
 
 @app.route("/recipes/edit", methods=['POST'])
 def editRecipe():
-    return jsonify("{}")
+    delegate=FileDelegate()
+    json=delegate.edit(file=request.files['file'],properties=request.values)
+    return jsonify(json)
 
+@app.route("/recipes/remove",methods=['DELETE'])
+def removeRecipe():
+    delegate=FileDelegate()
+    json=delegate.remove(file=request.files['file'],properties=request.values)
+    return jsonify(json)
 
 @app.route('/recipes/tags', methods=['GET'])
 def getTags():

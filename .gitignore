@@ -1,3 +1,7 @@
 /data
-/lib/venv/
+/lib/.env/
 .idea
+*pycache*
+.vscode
+*.pycache
+*.pyc 

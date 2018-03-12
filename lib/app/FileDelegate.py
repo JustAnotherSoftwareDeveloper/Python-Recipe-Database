@@ -1,19 +1,23 @@
-from recipe import Recipe
+from app.recipe import Recipe
 import hashlib
 import os
 
 UPLOAD_FOLDER = os.getcwd() + "pdfs/"
 
-class CreationModificationDelegate:
+class FileDelegate:
 
 
     def addNew(self,properties,file):
+        print("Adding New")
         hasher = hashlib.md5()
         buf=file.read()
         hasher.update(buf)
         new_name=hasher.hexdigest()+".pdf"
+        print("Saving File")
         file.save(os.path.join(UPLOAD_FOLDER,new_name))
+        print("File Saved")
         recipe=Recipe(title=properties["title"],filename=new_name,tags=properties["tags"],ingredients=properties["ingredients"])
+        print("Saving to DB")
         recipe.save()
         return recipe.toJson()
 

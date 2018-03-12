@@ -1,5 +1,5 @@
 from flask import Flask
-from flask.ext.mongoalchemy import MongoAlchemy
+from flask_mongoalchemy import MongoAlchemy
 app = Flask(__name__)
 app.config["DEBUG"] = True
 app.config['MONGOALCHEMY_DATABASE'] = "recipes"
