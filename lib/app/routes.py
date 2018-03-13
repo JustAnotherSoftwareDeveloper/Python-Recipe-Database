@@ -4,12 +4,14 @@ import datetime
 from flask.json import jsonify
 from flask import request
 from app.FileDelegate import FileDelegate
+from app.recipe import Recipe
 
 
 @app.route('/', methods=['GET'])
 @app.route('/status')
 def index():
-    response = {'status': "OK", 'Time': datetime.datetime.now(), 'project': 'recipes'}
+    response = {'status': "OK", 'Time': datetime.datetime.now(),
+                                                              'project': 'recipes'}
     return jsonify(response)
 
 
@@ -25,7 +27,10 @@ def searchByTagsAll():
 
 @app.route("/search/all", methods=['GET'])
 def getAll():
-    return jsonify("{}")
+    recipes = Recipe.query.all()
+    toJson = list(map((lambda r: r.toJson()), recipes))
+    return jsonify(toJson)
+
 
 
 @app.route("/search/ByIngredients", methods=['GET'])
