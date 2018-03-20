@@ -11,3 +11,9 @@ class TagsDelegate:
         if recipes is None:
             return []
         return list(map((lambda r: r.toJson()), recipes))
+    
+    def tagsIncludeAll(self,tags):
+        recipes = Recipe.query.tagsIncludeAll(tags=tags)
+        if recipes is None:
+            return []
+        return list(map((lambda r: r.toJson()), recipes))

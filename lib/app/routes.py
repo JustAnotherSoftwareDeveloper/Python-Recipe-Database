@@ -1,10 +1,13 @@
 from app import app
 import datetime
+import os
 
 from flask.json import jsonify
 from flask import request
+from flask import send_file
 from app.FileDelegate import FileDelegate
 from app.TagsDelegate import TagsDelegate
+from app.IngredientsDelegate import IngredientsDelegate
 from app.recipe import Recipe
 
 
@@ -28,7 +31,9 @@ def searchByTags():
 
 @app.route('/search/byTags/all', methods=['GET'])
 def searchByTagsAll():
-    return jsonify("{}")
+    tags = request.args['tags'].split(',')
+    recipes = TagsDelegate().tagsIncludeAll(tags)
+    return jsonify(recipes)
 
 
 @app.route("/search/all", methods=['GET'])
@@ -40,12 +45,15 @@ def getAll():
 
 @app.route("/search/ByIngredients", methods=['GET'])
 def searchByIngredients():
-    return jsonify("{}")
-
+    ingredients = request.args['ingredients'].split(',')
+    recipes=IngredientsDelegate().ingredientsInclude(ingredients)
+    return jsonify(recipes)
 
 @app.route("/search/ByIngredients/all", methods=['GET'])
 def searchByIngredientsAll():
-    return jsonify("{}")
+    ingredients = request.args['ingredients'].split(',')
+    recipes=IngredientsDelegate().ingredientsIncludeAll(ingredients)
+    return jsonify(recipes)
 
 
 @app.route("/recipes/put", methods=['POST'])
@@ -82,4 +90,12 @@ def getTags():
 
 @app.route('/recipes/ingredients', methods=['GET'])
 def getIngredients():
-    return jsonify("{}")
+    ingredients = IngredientsDelegate().getIngredients()
+    return jsonify(list(ingredients))
+
+@app.route('/download',methods=['GET'])
+def downloadFile():
+    filename=request.args['filename']
+    full_path=os.path.join(os.getcwd(),"pdfs",filename)
+    return send_file(full_path)
+    
