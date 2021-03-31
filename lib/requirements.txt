@@ -577,7 +577,7 @@ pymongo == 2.8.1
 # .env/lib/python3.6/site-packages/yarg/client.py: 26
 # .env/lib/python3.6/site-packages/yarg/exceptions.py: 26
 # .env/lib/python3.6/site-packages/yarg/parse.py: 28
-requests == 2.18.4
+requests == 2.20.0
 
 # .env/lib/python3.6/site-packages/astroid/__pkginfo__.py: 12,13
 # .env/lib/python3.6/site-packages/astroid/interpreter/_import/util.py: 4
