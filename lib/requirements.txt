@@ -115,7 +115,7 @@ MongoAlchemy == 0.19
 # .env/lib/python3.6/site-packages/werkzeug/utils.py: 365,371,628
 # .env/lib/python3.6/site-packages/werkzeug/wrappers.py: 48,58,271,302,1447,1534
 # .env/lib/python3.6/site-packages/werkzeug/wsgi.py: 53,65,569
-Werkzeug == 0.14.1
+Werkzeug == 0.15.3
 
 # .env/lib/python3.6/site-packages/astroid/__init__.py: 68,71
 # .env/lib/python3.6/site-packages/astroid/arguments.py: 10,11,12,13,14
