@@ -42,7 +42,7 @@ Flask_MongoAlchemy == 0.7.2
 # .env/lib/python3.6/site-packages/jinja2/tests.py: 15
 # .env/lib/python3.6/site-packages/jinja2/utils.py: 16,101,117,118,240
 # .env/lib/python3.6/site-packages/jinja2/visitor.py: 11
-Jinja2 == 2.10
+Jinja2 == 2.11.3
 
 # .env/lib/python3.6/site-packages/jinja2/sandbox.py: 23
 # .env/lib/python3.6/site-packages/jinja2/utils.py: 647
