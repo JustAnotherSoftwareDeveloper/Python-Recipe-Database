@@ -728,7 +728,7 @@ six == 1.11.0
 # .env/lib/python3.6/site-packages/requests/exceptions.py: 9
 # .env/lib/python3.6/site-packages/requests/help.py: 10
 # .env/lib/python3.6/site-packages/requests/models.py: 22
-urllib3 == 1.22
+urllib3 == 1.26.5
 
 # .env/lib/python3.6/site-packages/pip/commands/install.py: 10
 # .env/lib/python3.6/site-packages/wheel/__main__.py: 14
