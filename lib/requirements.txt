@@ -426,7 +426,7 @@ mccabe == 0.6.1
 # .env/lib/python3.6/site-packages/pip/vcs/mercurial.py: 8,9,10
 # .env/lib/python3.6/site-packages/pip/vcs/subversion.py: 12,166
 # .env/lib/python3.6/site-packages/pip/wheel.py: 33,36,37,38,39,40,41,42,552
-pip == 9.0.2
+pip == 19.2
 
 # .env/lib/python3.6/site-packages/pipreqs/pipreqs.py: 37
 pipreqs == 0.4.9
