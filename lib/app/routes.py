@@ -4,6 +4,7 @@ import os
 
 from flask.json import jsonify
 from flask import request
+from werkzeug.utils import safe_join
 from flask import send_file
 from app.FileDelegate import FileDelegate
 from app.TagsDelegate import TagsDelegate
@@ -46,13 +47,14 @@ def getAll():
 @app.route("/search/ByIngredients", methods=['GET'])
 def searchByIngredients():
     ingredients = request.args['ingredients'].split(',')
-    recipes=IngredientsDelegate().ingredientsInclude(ingredients)
+    recipes = IngredientsDelegate().ingredientsInclude(ingredients)
     return jsonify(recipes)
+
 
 @app.route("/search/ByIngredients/all", methods=['GET'])
 def searchByIngredientsAll():
     ingredients = request.args['ingredients'].split(',')
-    recipes=IngredientsDelegate().ingredientsIncludeAll(ingredients)
+    recipes = IngredientsDelegate().ingredientsIncludeAll(ingredients)
     return jsonify(recipes)
 
 
@@ -93,9 +95,9 @@ def getIngredients():
     ingredients = IngredientsDelegate().getIngredients()
     return jsonify(list(ingredients))
 
-@app.route('/download',methods=['GET'])
+
+@app.route('/download', methods=['GET'])
 def downloadFile():
-    filename=request.args['filename']
-    full_path=os.path.join(os.getcwd(),"pdfs",filename)
+    filename = request.args['filename']
+    full_path = safe_join(os.getcwd(), "pdfs", filename)
     return send_file(full_path)
-    
