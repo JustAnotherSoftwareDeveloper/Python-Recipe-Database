@@ -247,7 +247,7 @@ astroid == 1.6.2
 # .env/lib/python3.6/site-packages/certifi/__main__.py: 1
 # .env/lib/python3.6/site-packages/pip/_vendor/certifi/__main__.py: 1
 # .env/lib/python3.6/site-packages/requests/certs.py: 15
-certifi == 2018.1.18
+certifi == 2022.12.7
 
 # .env/lib/python3.6/site-packages/chardet/cli/chardetect.py: 21,22,23
 # .env/lib/python3.6/site-packages/pip/_vendor/chardet/cli/chardetect.py: 21,22,23
