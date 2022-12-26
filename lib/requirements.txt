@@ -734,7 +734,7 @@ urllib3 == 1.22
 # .env/lib/python3.6/site-packages/wheel/__main__.py: 14
 # .env/lib/python3.6/site-packages/wheel/egg2wheel.py: 13,14
 # .env/lib/python3.6/site-packages/wheel/wininst2wheel.py: 12,13
-wheel == 0.30.0
+wheel == 0.38.1
 
 # .env/lib/python3.6/site-packages/astroid/decorators.py: 12
 wrapt == 1.10.11
