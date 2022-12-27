@@ -642,7 +642,7 @@ requests == 2.18.4
 # .env/lib/python3.6/site-packages/wheel/tool/__init__.py: 20,242,243
 # .env/lib/python3.6/site-packages/wheel/util.py: 164
 # .env/lib/python3.6/site-packages/wrapt/importer.py: 114
-setuptools == 39.0.1
+setuptools == 65.5.1
 
 # .env/lib/python3.6/site-packages/astroid/arguments.py: 8
 # .env/lib/python3.6/site-packages/astroid/as_string.py: 18
